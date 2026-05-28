@@ -82,7 +82,7 @@ export const PROJECTS = [
     color: "#fff",
     accent: "#2C2C2A",
     span: "mid",
-    role: "Front-end Developer & Designer",
+    role: "Developer & Designer",
     coverImage: "/images/obssr-thumb.png",
     heroImage: "/images/obssr-thumb.png",
     images: [
@@ -152,7 +152,7 @@ export const PROJECTS = [
     color: "#fff",
     accent: "#2C2C2A",
     span: "mid",
-    role: "Designer and Front-end Developer",
+    role: "Developer & Designer",
     coverImage: "/images/dpcpsi-inside-thumb.png",
     heroImage: "/images/dpcpsi-inside-thumb.png",
     images: [
@@ -222,7 +222,7 @@ export const PROJECTS = [
     color: "#fff",
     accent: "#2C2C2A",
     span: "mid",
-    role: "Web Developer",
+    role: "Developer & Designer",
         coverImage: "/images/thro-thumb.png",
     heroImage: "/images/thro-thumb.png",
     images: [
@@ -292,7 +292,7 @@ export const PROJECTS = [
     color: "#fff",
     accent: "#2C2C2A",
     span: "mid",
-    role: "Web Developer",
+    role: "Developer & Designer",
     coverImage: "/images/living-history-thumb.png",
     heroImage: "/images/living-history-thumb.png",
     images: [
@@ -362,7 +362,7 @@ export const PROJECTS = [
     color: "#fff",
     accent: "#2C2C2A",
     span: "mid",
-    role: "Web Developer",
+    role: "Developer",
         coverImage: "/images/scgcorp-thumb.png",
     heroImage: "/images/scgcorp-thumb.png",
     images: [
@@ -432,7 +432,7 @@ export const PROJECTS = [
     color: "#fff",
     accent: "#2C2C2A",
     span: "mid",
-    role: "Web Developer",
+    role: "Developer",
         coverImage: "/images/miamicom-thumb.jpg",
     heroImage: "orip.png",
     images: [
@@ -502,7 +502,7 @@ export const PROJECTS = [
     color: "#fff",
     accent: "#2C2C2A",
     span: "mid",
-    role: "Web Developer",
+    role: "Developer & Designer",
     coverImage: "/images/rooted-studio-thumb.png",
     heroImage: "/images/rooted-studio.png",
     images: [
