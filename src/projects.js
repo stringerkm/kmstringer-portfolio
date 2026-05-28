@@ -75,7 +75,7 @@ export const PROJECTS = [
     slug: "obssr",
     title: "OBSSR",
     category: "Website Design and Development",
-    year: "2024",
+    year: "2019 - 2025",
     tags: ["Drupal", "Figma"],
     description:
       "Supported the Office of Behavioral and Social Science Research (OBSSR) in a website redesign and migration from Wordpress to Drupal.",
@@ -93,9 +93,9 @@ export const PROJECTS = [
 
     overview:
       "Solis Health had grown fast. Six product teams, three separate component libraries, and a design org where no two screens looked like they belonged to the same product. Patients switching between the scheduling app, the telehealth portal, and the pharmacy tool felt the inconsistency. So did engineers spending hours reconciling mismatched components.",
-    duration: "8 months",
-    team: "2 designers, 1 engineer, 6 product teams",
-    platform: "Web (React)",
+    duration: "12 months",
+    team: "1 designer, 1 PMs, 2 developers",
+    platform: "Drupal",
 
     problem: {
       heading: "Six teams, three libraries, zero consistency",
@@ -144,8 +144,8 @@ export const PROJECTS = [
     id: 3,
     slug: "dpcpsi-inside",
     title: "DPCPSI Inside",
-    category: "0→1 Product",
-    year: "2023",
+    category: "Website Design & Development",
+    year: "2022",
     tags: ["Drupal"],
     description:
       "Supported the migration and redesign of the DPCPSI employee intranet from Sharepoint to Drupal.",
@@ -164,7 +164,7 @@ export const PROJECTS = [
     overview:
       "Kairos started as a napkin sketch from two ex-Google engineers who were convinced calendaring was broken. Their hypothesis: if an AI understood your working patterns well enough, it could protect your time better than you could yourself. They needed a founding designer to help prove the concept was real before they raised.",
     duration: "11 months",
-    team: "Founding team of 4",
+    team: "1 designer, 1 PM, 2 developers",
     platform: "Web App",
 
     problem: {
@@ -214,8 +214,8 @@ export const PROJECTS = [
     id: 4,
     slug: "thro",
     title: "THRO",
-    category: "Web",
-    year: "2004",
+    category: "Website Design & Development",
+    year: "2022",
     tags: ["Drupal", "Figma"],
     description:
       "Redesigned the Tribal Health Research Office (THRO) website and supported ongoing publishing tasks.",
@@ -234,7 +234,7 @@ export const PROJECTS = [
     overview:
       "Forma Editorial is a seven-person architecture and interiors studio doing some of the most interesting residential work in the Pacific Northwest. Their reputation was exceptional. Their brand was a white-label WordPress theme from 2017. They needed an identity that matched the quality of what they built.",
     duration: "4 months",
-    team: "1 designer, 1 developer",
+    team: "1 designer, 1 PM, 1 developer",
     platform: "Branding + Web",
 
     problem: {
@@ -304,7 +304,7 @@ export const PROJECTS = [
     overview:
       "Forma Editorial is a seven-person architecture and interiors studio doing some of the most interesting residential work in the Pacific Northwest. Their reputation was exceptional. Their brand was a white-label WordPress theme from 2017. They needed an identity that matched the quality of what they built.",
     duration: "4 months",
-    team: "1 designer, 1 developer",
+    team: "1 designer, 1PM, 1 developer",
     platform: "Branding + Web",
 
     problem: {
@@ -355,7 +355,7 @@ export const PROJECTS = [
     slug: "scg-com",
     title: "The Scientific Consulting Group",
     category: "Web",
-    year: "2004",
+    year: "2022",
     tags: ["Nunjucks", "Bootstrap"],
     description:
       "Supported the website redesign and streamlined the website making it easier to update and maintain.",
@@ -374,8 +374,8 @@ export const PROJECTS = [
     overview:
       "Forma Editorial is a seven-person architecture and interiors studio doing some of the most interesting residential work in the Pacific Northwest. Their reputation was exceptional. Their brand was a white-label WordPress theme from 2017. They needed an identity that matched the quality of what they built.",
     duration: "4 months",
-    team: "1 designer, 1 developer",
-    platform: "Branding + Web",
+    team: "1 designer, 1PM, 1 developer",
+    platform: "Nunjucks",
 
     problem: {
       heading: "World-class work, invisible brand",
@@ -444,8 +444,8 @@ export const PROJECTS = [
     overview:
       "Forma Editorial is a seven-person architecture and interiors studio doing some of the most interesting residential work in the Pacific Northwest. Their reputation was exceptional. Their brand was a white-label WordPress theme from 2017. They needed an identity that matched the quality of what they built.",
     duration: "4 months",
-    team: "1 designer, 1 developer",
-    platform: "Branding + Web",
+    team: "1 designer, 1PM, 3 developers",
+    platform: "Drupal",
 
     problem: {
       heading: "World-class work, invisible brand",
@@ -495,7 +495,7 @@ export const PROJECTS = [
     slug: "rooted-studio",
     title: "The Rooted Studio",
     category: "Web",
-    year: "2004",
+    year: "2020",
     tags: ["Wordpress"],
     description:
       "Designed and built a website for a design + build architecture firm.",
@@ -514,7 +514,7 @@ export const PROJECTS = [
     overview:
       "Forma Editorial is a seven-person architecture and interiors studio doing some of the most interesting residential work in the Pacific Northwest. Their reputation was exceptional. Their brand was a white-label WordPress theme from 2017. They needed an identity that matched the quality of what they built.",
     duration: "4 months",
-    team: "1 designer, 1 developer",
+    team: "1 designer + developer",
     platform: "Branding + Web",
 
     problem: {

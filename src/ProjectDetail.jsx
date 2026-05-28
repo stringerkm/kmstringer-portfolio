@@ -96,7 +96,7 @@ export default function ProjectDetail() {
             className={`cs-hero__overview ${fu(headerInView, 2)}`}
             style={{ color: project.accent }}
           >
-            {project.overview}
+            {project.description}
           </p>
 
           <div className={`cs-hero__meta ${fu(headerInView, 3)}`}>
@@ -125,134 +125,6 @@ export default function ProjectDetail() {
         </div>
       </header>
 
-      {/* ── MOCKUP PLACEHOLDER ── */}
-      <div className="cs-mockup" style={{ background: project.color }}>
-        <div className="container">
-          <div
-            className="cs-mockup__screen"
-            style={{ borderColor: project.accent + "22" }}
-          >
-            <div
-              className="cs-mockup__screen-inner"
-              style={{ background: project.accent + "08" }}
-            >
-              <img
-            src={project.coverImage}
-            alt={project.title}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              transition: "transform 0.6s ease",
-              transform: hovered ? "scale(1.04)" : "scale(1)",
-              opacity: 0.85,
-            }}
-          />
-              <p
-                className="cs-mockup__label serif"
-                style={{ color: project.accent, opacity: 0.25 }}
-              >
-                {project.title}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ── PROBLEM ── */}
-      <section ref={problemRef} className="cs-section">
-        <div className="container cs-section__inner">
-          <div className={`cs-section__label-col ${fu(problemInView)}`}>
-            <p className="cs-section__label">The Problem</p>
-          </div>
-          <div className="cs-section__content">
-            <h2 className={`cs-section__heading serif ${fu(problemInView, 1)}`}>
-              {project.problem.heading}
-            </h2>
-            <p className={`cs-section__body ${fu(problemInView, 2)}`}>
-              {project.problem.body}
-            </p>
-            <div className={`cs-stats ${fu(problemInView, 3)}`}>
-              {project.problem.stats.map(s => (
-                <StatCard key={s.label} {...s} accent={project.accent} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── PROCESS ── */}
-      <section ref={processRef} className="cs-section cs-section--warm">
-        <div className="container cs-section__inner">
-          <div className={`cs-section__label-col ${fu(processInView)}`}>
-            <p className="cs-section__label">Process</p>
-          </div>
-          <div className="cs-section__content">
-            <h2 className={`cs-section__heading serif ${fu(processInView, 1)}`}>
-              How we got there
-            </h2>
-            <div className="cs-process">
-              {project.process.map((step, i) => (
-                <div
-                  key={step.phase}
-                  className={`cs-process__step ${fu(processInView, Math.min(i + 1, 4))}`}
-                >
-                  <div className="cs-process__step-header">
-                    <span className="cs-process__step-num serif">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="cs-process__step-phase serif">
-                      {step.phase}
-                    </h3>
-                  </div>
-                  <p className="cs-process__step-body">{step.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SECOND MOCKUP ── */}
-      <div className="cs-mockup cs-mockup--dark">
-        <div className="container">
-          <div className="cs-mockup__row">
-            {[0, 1, 2].map(n => (
-              <div
-                key={n}
-                className="cs-mockup__screen cs-mockup__screen--sm"
-                style={{ borderColor: "#ffffff18", animationDelay: `${n * 0.15}s` }}
-              >
-                <div className="cs-mockup__screen-inner cs-mockup__screen-inner--dark">
-                  <p className="cs-mockup__label serif">{project.title}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ── OUTCOME ── */}
-      <section ref={outcomeRef} className="cs-section">
-        <div className="container cs-section__inner">
-          <div className={`cs-section__label-col ${fu(outcomeInView)}`}>
-            <p className="cs-section__label">Outcome</p>
-          </div>
-          <div className="cs-section__content">
-            <h2 className={`cs-section__heading serif ${fu(outcomeInView, 1)}`}>
-              {project.outcome.heading}
-            </h2>
-            <p className={`cs-section__body ${fu(outcomeInView, 2)}`}>
-              {project.outcome.body}
-            </p>
-            <div className={`cs-stats ${fu(outcomeInView, 3)}`}>
-              {project.outcome.stats.map(s => (
-                <StatCard key={s.label} {...s} accent={project.accent} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── NEXT PROJECT ── */}
       {nextProject && (
