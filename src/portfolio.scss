@@ -1,0 +1,1138 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+
+// ─── Tokens ───────────────────────────────────────────────────────────────────
+
+$font-serif: 'DM Serif Display', serif;
+$font-sans:  'DM Sans', sans-serif;
+$font-size: 12px;
+
+$color-ink:        #2C2C2A;
+$color-ink-mid:    #444441;
+$color-ink-muted:  #5F5E5A;
+$color-ink-faint:  #888780;
+$color-border:     #D3D1C7;
+$color-border-lt:  #E8E6E0;
+$color-bg:         #FAFAF8;
+$color-bg-warm:    #eaeaea;
+$color-bg-cold:    #f4f9f9;
+$color-bg-card:    #E8E4DF;
+$color-placeholder:#B4B2A9;
+$color-green:      #1D9E75;
+$color-pop:        #f08080;
+$color-pop-light:    #fdf2f2;
+$color-highlight:    #008080;
+
+
+$max-width: 1200px;
+$max-width-narrow: 900px;
+
+// ─── Reset ────────────────────────────────────────────────────────────────────
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-sans;
+  background: $color-bg;
+  color: $color-ink;
+  font-size: $font-size;
+}
+
+// ─── Utilities ────────────────────────────────────────────────────────────────
+
+.serif {
+  font-family: $font-serif;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.container--narrow {
+  max-width: $max-width-narrow;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.section-label {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $color-ink-faint;
+  margin-bottom: 1.5rem;
+
+}
+
+// ─── Animations ───────────────────────────────────────────────────────────────
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba($color-green, 0.4); }
+  50%       { box-shadow: 0 0 0 5px rgba($color-green, 0); }
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.d1 { transition-delay: 0.1s; }
+  &.d2 { transition-delay: 0.2s; }
+  &.d3 { transition-delay: 0.3s; }
+  &.d4 { transition-delay: 0.4s; }
+}
+
+// ─── Navigation ───────────────────────────────────────────────────────────────
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba($color-bg, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #ECEAE4;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 18px;
+
+  &__inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  &__logo-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__logo-name {
+    font-family: $font-serif;
+    font-size: 1.25rem;
+    color: $color-ink;
+  }
+
+  &__logo-role {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $color-ink-faint;
+    font-weight: 400;
+  }
+
+  &__links {
+    display: none;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: $font-sans;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: $color-ink-faint;
+  text-transform: uppercase;
+  padding: 0.25rem 0;
+  position: relative;
+  transition: color 0.2s;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: $color-pop;
+    transition: width 0.25s ease;
+  }
+
+  &:hover,
+  &--active {
+    color: $color-ink;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+// ─── Availability dot ─────────────────────────────────────────────────────────
+
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $color-green;
+    animation: pulse 2s infinite;
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    color: $color-green;
+    font-weight: 500;
+  }
+}
+
+// ─── Hero ─────────────────────────────────────────────────────────────────────
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 64px;
+  padding-bottom: 5rem;
+
+  &__marquee-wrap {
+    overflow: hidden;
+    margin-bottom: 4rem;
+    opacity: 0.35;
+  }
+
+  &__marquee-track {
+    display: flex;
+    gap: 3rem;
+    white-space: nowrap;
+    animation: marquee 18s linear infinite;
+  }
+
+  &__marquee-item {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  &__eyebrow {
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $color-ink-faint;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  &__heading {
+    font-family: $font-serif;
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    line-height: 1.05;
+    color: $color-ink;
+    margin-bottom: 2.5rem;
+    max-width: 15ch;
+
+    em {
+      color: $color-ink-faint;
+      font-style: italic;
+    }
+  }
+
+  &__ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 5rem;
+    padding-top: 3rem;
+    border-top: 1px solid $color-border-lt;
+    flex-wrap: wrap;
+  }
+
+  &__stat-num {
+    font-family: $font-serif;
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  &__stat-label {
+    font-size: 0.8rem;
+    color: $color-ink-faint;
+    margin-top: 0.25rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+// ─── Buttons ──────────────────────────────────────────────────────────────────
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 100px;
+  font-family: $font-sans;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 0.8rem 1.8rem;
+  transition: background 0.2s, transform 0.15s, border-color 0.2s;
+
+  &--primary {
+    background: $color-pop;
+    color: $color-bg;
+
+    &:hover {
+      background: $color-pop-light;
+      transform: translateY(-1px);
+    }
+  }
+
+  &--primary-inv {
+    background: $color-bg-warm;
+    color: $color-ink;
+
+    &:hover {
+      background: darken($color-bg-warm, 5%);
+      transform: translateY(-1px);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: $color-ink;
+    border: 1px solid $color-border;
+
+    &:hover {
+      border-color: $color-ink;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// ─── Tag ──────────────────────────────────────────────────────────────────────
+
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: $color-pop-light;
+  color: $color-ink-mid;
+}
+
+// ─── Projects ─────────────────────────────────────────────────────────────────
+
+.work {
+  padding: 5rem 0;
+  background: $color-bg;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__heading {
+    font-family: $font-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  &__year {
+    font-size: 0.8rem;
+    color: $color-ink-faint;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__col--wide {
+    grid-column: span 7;
+
+    @media (max-width: 768px) {
+      grid-column: span 1;
+    }
+  }
+
+  &__col--narrow {
+    grid-column: span 5;
+
+    @media (max-width: 768px) {
+      grid-column: span 1;
+    }
+  }
+
+  &__col--mid {
+    grid-column: span 4;
+
+    @media (max-width: 768px) {
+      grid-column: span 1;
+    }
+  }
+}
+
+.project-card {
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+
+  &--wide {
+    min-height: 420px;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+
+  &__category {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  &__role {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(1.8rem, 3vw, 1.5rem);
+    line-height: 1.1;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    line-height: 1.65;
+    max-width: 34ch;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 2rem;
+  }
+
+  &__tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  &__arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    background: $color-highlight;
+
+    &--hovered {
+      transform: scale(1.1) rotate(-45deg);
+    }
+
+    &--idle {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+}
+
+// ─── About ────────────────────────────────────────────────────────────────────
+
+.about {
+  padding: 7rem 0;
+  background: $color-bg-warm;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__heading {
+    font-family: $font-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.15;
+    margin-bottom: 2rem;
+  }
+
+  &__body {
+    font-size: 0.95rem;
+    color: $color-ink-muted;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+
+    &:last-of-type {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__tools {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__tool-badge {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    background: $color-pop-light;
+  }
+
+  &__avatar-wrap {
+    margin-bottom: 3rem;
+  }
+
+  &__avatar {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #fff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__avatar-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__avatar-initials {
+    font-family: $font-serif;
+    font-size: 5rem;
+    color: $color-placeholder;
+    line-height: 1;
+  }
+
+  &__avatar-name {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $color-placeholder;
+  }
+
+  &__skills {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+
+  &__skill-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  &__skill-pct {
+    font-size: 0.75rem;
+    color: $color-ink-faint;
+  }
+}
+
+// ─── Skill bar ────────────────────────────────────────────────────────────────
+
+.skill-bar {
+  &__track {
+    height: 2px;
+    background: $color-border-lt;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  &__fill {
+    height: 100%;
+    background: $color-ink;
+    border-radius: 2px;
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+// ─── Process ──────────────────────────────────────────────────────────────────
+
+.process {
+  padding: 7rem 0;
+  background: $color-bg-cold;
+
+  &__header {
+    margin-bottom: 3rem;
+  }
+
+  &__heading {
+    font-family: $font-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+  }
+}
+
+.process-card {
+  border-top: 1px solid $color-border-lt;
+  padding: 2rem 0;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: $color-highlight;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+
+    @media (max-width: 640px) {
+      grid-template-columns: 48px 1fr;
+
+      p { grid-column: 2; }
+    }
+  }
+
+  &__num {
+    font-family: $font-serif;
+    font-size: 2rem;
+    color: $color-border;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.5rem;
+  }
+
+  &__body {
+    font-size: 0.9rem;
+    color: $color-ink-muted;
+    line-height: 1.75;
+  }
+}
+
+// ─── Contact ──────────────────────────────────────────────────────────────────
+
+.contact {
+  padding: 7rem 0;
+  background: $color-ink;
+
+  &__heading {
+    font-family: $font-serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    color: $color-bg-warm;
+  }
+
+  &__heading--muted {
+    color: $color-ink-faint;
+    font-style: italic;
+    margin-bottom: 3rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__social-link {
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $color-ink-faint;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $color-bg-warm;
+    }
+  }
+
+  &__success {
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  &__success-icon {
+    font-family: $font-serif;
+    font-size: 3rem;
+    color: $color-bg-warm;
+    margin-bottom: 1rem;
+  }
+
+  &__success-text {
+    color: $color-placeholder;
+    font-size: 1rem;
+  }
+}
+
+.contact-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $color-ink-mid;
+  font-family: $font-sans;
+  font-size: 1rem;
+  padding: 0.75rem 0;
+  outline: none;
+  color: $color-bg-warm;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: $color-bg-warm;
+  }
+
+  &::placeholder {
+    color: $color-ink-faint;
+  }
+
+  &--textarea {
+    resize: none;
+    height: 100px;
+  }
+}
+
+// ─── Case Study ───────────────────────────────────────────────────────────────
+
+// Project cards are now <Link> elements — reset anchor styles
+a.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+// Hero header
+.cs-hero {
+  padding: 10rem 0 5rem;
+
+  &__eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    opacity: 0.6;
+  }
+
+  &__title {
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1.05;
+    margin-bottom: 2rem;
+    max-width: 16ch;
+  }
+
+  &__overview {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 60ch;
+    opacity: 0.75;
+    margin-bottom: 3.5rem;
+  }
+
+  &__meta {
+    display: flex;
+    gap: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid currentColor;
+    opacity: 0.9;
+    flex-wrap: wrap;
+  }
+
+  &__meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  &__meta-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  &__meta-value {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}
+
+// Mockup placeholder blocks
+.cs-mockup {
+  padding: 4rem 0;
+
+  &--dark {
+    background: $color-ink;
+    padding: 5rem 0;
+  }
+
+  &__screen {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    border: 1px solid;
+    overflow: hidden;
+
+    &--sm {
+      aspect-ratio: 9 / 16;
+      max-width: 260px;
+      flex: 1;
+    }
+  }
+
+  &__screen-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--dark {
+      background: rgba(255, 255, 255, 0.04);
+    }
+  }
+
+  &__label {
+    font-size: 2rem;
+    opacity: 0.15;
+
+    .cs-mockup--dark & {
+      color: $color-bg;
+      opacity: 0.2;
+    }
+  }
+
+  &__row {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: stretch;
+  }
+}
+
+// Two-column section layout
+.cs-section {
+  padding: 7rem 0;
+
+  &--warm {
+    background: $color-bg-warm;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 4rem;
+    align-items: start;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  &__label-col {
+    padding-top: 0.5rem;
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $color-ink-faint;
+  }
+
+  &__heading {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  &__body {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: $color-ink-muted;
+    max-width: 60ch;
+    margin-bottom: 3rem;
+  }
+}
+
+// Stats row
+.cs-stats {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.cs-stat {
+  &__value {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  &__label {
+    font-size: 0.78rem;
+    color: $color-ink-faint;
+    letter-spacing: 0.04em;
+  }
+}
+
+// Process steps
+.cs-process {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  &__step {
+    border-top: 1px solid $color-border-lt;
+    padding: 2rem 0;
+
+    &:last-child {
+      border-bottom: 1px solid $color-border-lt;
+    }
+  }
+
+  &__step-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__step-num {
+    font-size: 1.1rem;
+    color: $color-border;
+    min-width: 2rem;
+  }
+
+  &__step-phase {
+    font-size: 1.3rem;
+  }
+
+  &__step-body {
+    font-size: 0.93rem;
+    line-height: 1.8;
+    color: $color-ink-muted;
+    padding-left: calc(2rem + 1.25rem);
+
+    @media (max-width: 640px) {
+      padding-left: 0;
+    }
+  }
+}
+
+// Next project CTA
+.cs-next {
+  display: block;
+  padding: 6rem 0;
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: brightness(0.97);
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    gap: 1rem;
+  }
+
+  &__title {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    line-height: 1.05;
+  }
+
+  &__arrow {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+
+    .cs-next:hover & {
+      transform: translate(4px, -4px);
+    }
+  }
+
+  &__desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 55ch;
+  }
+}
+
+// 404 fallback
+.cs-not-found {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-family: $font-sans;
+}
+
+// ─── Footer ───────────────────────────────────────────────────────────────────
+
+.footer {
+  background: $color-ink;
+  border-top: 1px solid $color-ink-mid;
+  padding: 2rem;
+
+  &__inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__logo {
+    font-family: $font-serif;
+    color: $color-ink-muted;
+    font-size: 1rem;
+  }
+
+  &__copy {
+    font-size: 0.75rem;
+    color: $color-ink-muted;
+    letter-spacing: 0.06em;
+  }
+}
