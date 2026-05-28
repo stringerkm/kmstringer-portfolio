@@ -142,10 +142,10 @@ export default function Portfolio() {
               <div className={fu(aboutInView)}>
                 <p className="section-label">About</p>
                 <h2 className="about__heading serif">
-                  I bridge the gap between user needs and business goals.
+                  Crafting interfaces from concept to code. 
                 </h2>
                 <p className="about__body">
-                  I'm Kate Stringer, a web designer and developer based in Maryland.
+                  I'm a web designer and developer based in Maryland.
                   For 10+ years I've created web experiences
                   that are both useful and delightful.
                 </p>
