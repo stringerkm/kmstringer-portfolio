@@ -142,7 +142,7 @@ export default function Portfolio() {
               <div className={fu(aboutInView)}>
                 <p className="section-label">About</p>
                 <h2 className="about__heading serif">
-                  Crafting interfaces from concept to code. 
+                  I like to design, and I like to code. 
                 </h2>
                 <p className="about__body">
                   I'm a web designer and developer based in Maryland.
