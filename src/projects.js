@@ -5,13 +5,13 @@ export const PROJECTS = [
     title: "ORIP",
     category: "Website Design and Development",
     year: "2019 - 2025",
-    tags: ["Web", "Drupal", "Redesign", "Migration"],
+    tags: ["Drupal", "Figma"],
     description:
       "Supported the Office of Research Infrastructure Programs (ORIP) in a website redesign and migration from Drupal 7 to Drupal 10.",
     color: "#fff",
     accent: "#2C2C2A",
     span: "mid",
-    role: "Lead Developer",
+    role: "Developer",
     coverImage: "/images/orip-thumb.png",
     heroImage: "/images/orip.png",
     images: [
@@ -22,8 +22,8 @@ export const PROJECTS = [
 
     // Case study content
     overview:
-      "Meridian came to us with a conversion problem. Their onboarding funnel was losing 6 in 10 new users before they ever connected a bank account. The existing flow had been bolted together over three years and no one had a full picture of where people dropped off, or why.",
-    duration: "5 months",
+      "Supported the Office of Research Infrastructure Programs (ORIP) in a website redesign and migration from Drupal 7 to Drupal 10.",
+    duration: "12 months",
     team: "1 designer, 2 PMs, 2 developers",
     platform: "Drupal",
 
@@ -74,15 +74,15 @@ export const PROJECTS = [
     id: 2,
     slug: "obssr",
     title: "OBSSR",
-    category: "Design System",
+    category: "Website Design and Development",
     year: "2024",
-    tags: ["Web", "Healthcare", "React"],
+    tags: ["Drupal", "Figma"],
     description:
-      "End-to-end design system serving 6 product teams across a telehealth platform.",
+      "Supported the Office of Behavioral and Social Science Research (OBSSR) in a website redesign and migration from Wordpress to Drupal.",
     color: "#fff",
     accent: "#2C2C2A",
     span: "mid",
-    role: "Developer & Designer",
+    role: "Front-end Developer & Designer",
     coverImage: "/images/obssr-thumb.png",
     heroImage: "/images/obssr-thumb.png",
     images: [
@@ -146,13 +146,13 @@ export const PROJECTS = [
     title: "DPCPSI Inside",
     category: "0→1 Product",
     year: "2023",
-    tags: ["Web App", "AI", "SaaS"],
+    tags: ["Drupal"],
     description:
-      "An AI-powered scheduling tool that learns from your habits. Took from concept to Series A.",
+      "Supported the migration and redesign of the DPCPSI employee intranet from Sharepoint to Drupal.",
     color: "#fff",
     accent: "#2C2C2A",
     span: "mid",
-    role: "Founding Designer",
+    role: "Designer and Front-end Developer",
     coverImage: "/images/dpcpsi-inside-thumb.png",
     heroImage: "/images/dpcpsi-inside-thumb.png",
     images: [
@@ -216,9 +216,9 @@ export const PROJECTS = [
     title: "THRO",
     category: "Web",
     year: "2004",
-    tags: ["Branding", "Web", "Drupal"],
+    tags: ["Drupal", "Figma"],
     description:
-      "Complete visual identity and digital presence for a boutique architecture studio.",
+      "Redesigned the Tribal Health Research Office (THRO) website and supported ongoing publishing tasks.",
     color: "#fff",
     accent: "#2C2C2A",
     span: "mid",
@@ -276,8 +276,8 @@ export const PROJECTS = [
       ],
     },
 
-    nextSlug: "miami-com",
-    nextTitle: "Miami.com",
+    nextSlug: "living-history",
+    nextTitle: "A Living History",
   },
 
   {
@@ -285,10 +285,10 @@ export const PROJECTS = [
     slug: "living-history",
     title: "A Living History",
     category: "Web",
-    year: "2004",
-    tags: ["Branding", "Web", "DrupalS"],
+    year: "2022",
+    tags: ["Nunjucks", "Figma", "Bootstrap"],
     description:
-      "Complete visual identity and digital presence for a boutique architecture studio.",
+      "Supported the website redesign and modernization and developed a compelling visual timemline.",
     color: "#fff",
     accent: "#2C2C2A",
     span: "mid",
@@ -346,8 +346,8 @@ export const PROJECTS = [
       ],
     },
 
-    nextSlug: "meridian-banking",
-    nextTitle: "Meridian Banking",
+    nextSlug: "scg-com",
+    nextTitle: "The Scientific Consulting Group",
   },
 
   {
@@ -356,9 +356,9 @@ export const PROJECTS = [
     title: "The Scientific Consulting Group",
     category: "Web",
     year: "2004",
-    tags: ["Branding", "Web", "DrupalS"],
+    tags: ["Nunjucks", "Bootstrap"],
     description:
-      "Complete visual identity and digital presence for a boutique architecture studio.",
+      "Supported the website redesign and streamlined the website making it easier to update and maintain.",
     color: "#fff",
     accent: "#2C2C2A",
     span: "mid",
@@ -416,8 +416,8 @@ export const PROJECTS = [
       ],
     },
 
-    nextSlug: "meridian-banking",
-    nextTitle: "Meridian Banking",
+    nextSlug: "miami-com",
+    nextTitle: "Miami.com",
   },
 
   {
@@ -425,15 +425,15 @@ export const PROJECTS = [
     slug: "miami-com",
     title: "Miami.com",
     category: "Web",
-    year: "2004",
-    tags: ["Branding", "Web", "DrupalS"],
+    year: "2007",
+    tags: ["Drupal"],
     description:
-      "Complete visual identity and digital presence for a boutique architecture studio.",
+      "Our team designed and developed Miami.com, an city-lifestyle and entertainment website that focuses on things to do in Miami. ",
     color: "#fff",
     accent: "#2C2C2A",
     span: "mid",
     role: "Web Developer",
-        coverImage: "orip.png",
+        coverImage: "/images/miamicom-thumb.jpg",
     heroImage: "orip.png",
     images: [
       { url: "orip.png", caption: "Local issues feed — personalized to your address and interests" },
@@ -486,7 +486,77 @@ export const PROJECTS = [
       ],
     },
 
-    nextSlug: "meridian-banking",
-    nextTitle: "Meridian Banking",
+    nextSlug: "rooted-studio",
+    nextTitle: "The Rooted Studio",
+  },
+
+  {
+    id: 8,
+    slug: "rooted-studio",
+    title: "The Rooted Studio",
+    category: "Web",
+    year: "2004",
+    tags: ["Wordpress"],
+    description:
+      "Designed and built a website for a design + build architecture firm.",
+    color: "#fff",
+    accent: "#2C2C2A",
+    span: "mid",
+    role: "Web Developer",
+    coverImage: "/images/rooted-studio-thumb.png",
+    heroImage: "/images/rooted-studio.png",
+    images: [
+      { url: "orip.png", caption: "Local issues feed — personalized to your address and interests" },
+      { url: "orip.png", caption: "Meeting summary cards — 2-minute briefings on 2-hour sessions" },
+      { url: "orip.png", caption: "Representative profile — voting record made transparent" },
+    ],
+
+    overview:
+      "Forma Editorial is a seven-person architecture and interiors studio doing some of the most interesting residential work in the Pacific Northwest. Their reputation was exceptional. Their brand was a white-label WordPress theme from 2017. They needed an identity that matched the quality of what they built.",
+    duration: "4 months",
+    team: "1 designer, 1 developer",
+    platform: "Branding + Web",
+
+    problem: {
+      heading: "World-class work, invisible brand",
+      body: "Forma's photography was stunning — the brand wrapping it was invisible at best, actively undermining at worst. The logo was generic, the website buried their best work in a paginated grid, and there was no consistent visual language across their pitch decks, proposals, or social presence. Prospective clients were Googling them and clicking away.",
+      stats: [
+        { value: "2017", label: "Last brand update" },
+        { value: "<30s", label: "Avg. time on old site" },
+        { value: "0", label: "Inbound leads from web" },
+      ],
+    },
+
+    process: [
+      {
+        phase: "Brand Strategy",
+        body: "Ran a two-day brand sprint with the two founding partners. Defined positioning, personality, and audience. Key insight: Forma's differentiator is their editorial approach to architecture — they think about how spaces will be written about, photographed, and remembered. That became the brand idea.",
+      },
+      {
+        phase: "Identity",
+        body: "Explored three directions: Minimal Swiss, Editorial Warm, and Structural. The partners chose a refined editorial direction — a custom wordmark, a terracotta and warm white palette, and a typographic system built around contrast between a high-contrast serif and a grotesque.",
+      },
+      {
+        phase: "Web Design",
+        body: "Designed a fullscreen, photography-first site with a non-standard navigation pattern that felt like turning the pages of a monograph. Every interaction was prototyped in Framer before handoff to the developer.",
+      },
+      {
+        phase: "Motion & Launch",
+        body: "Defined a motion language — slow, deliberate transitions that mirror how you experience a well-designed space. Wrote the brand guidelines document. Managed the launch, including a coordinated Instagram rollout.",
+      },
+    ],
+
+    outcome: {
+      heading: "Awwwards honoree. 3 inbound projects in 60 days.",
+      body: "The site launched to immediate industry recognition — an Awwwards Site of the Day, coverage in Dezeen, and three unsolicited project inquiries within 60 days, each above Forma's previous average project value. Average session time went from under 30 seconds to over 4 minutes.",
+      stats: [
+        { value: "4min+", label: "Avg. session duration" },
+        { value: "3", label: "Inbound projects in 60 days" },
+        { value: "SOTD", label: "Awwwards Site of the Day" },
+      ],
+    },
+
+    nextSlug: "orip",
+    nextTitle: "ORIP",
   },
 ];

@@ -1,25 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 // ─── Tokens ───────────────────────────────────────────────────────────────────
 
 $font-serif: 'DM Serif Display', serif;
 $font-sans:  'DM Sans', sans-serif;
+$font-serif: 'Playfair Display', serif;
 $font-size: 12px;
 
-$color-ink:        #2C2C2A;
+$color-ink:        #222;
 $color-ink-mid:    #444441;
 $color-ink-muted:  #5F5E5A;
 $color-ink-faint:  #888780;
 $color-border:     #D3D1C7;
 $color-border-lt:  #E8E6E0;
 $color-bg:         #FAFAF8;
-$color-bg-warm:    #eaeaea;
+$color-bg-warm:    #f4f4f4;
 $color-bg-cold:    #f4f9f9;
 $color-bg-card:    #E8E4DF;
 $color-placeholder:#B4B2A9;
 $color-green:      #1D9E75;
 $color-pop:        #f08080;
-$color-pop-light:    #fdf2f2;
+$color-pop-light:    #fea6a6;
 $color-highlight:    #008080;
 
 
@@ -271,7 +273,7 @@ body {
     max-width: 15ch;
 
     em {
-      color: $color-ink-faint;
+      color: $color-highlight;
       font-style: italic;
     }
   }
@@ -364,8 +366,9 @@ body {
   text-transform: uppercase;
   padding: 4px 10px;
   border-radius: 100px;
-  background: $color-pop-light;
-  color: $color-ink-mid;
+  background: #fff;
+  color: $color-highlight;
+  border: 1px solid $color-highlight;
 }
 
 // ─── Projects ─────────────────────────────────────────────────────────────────
@@ -528,7 +531,7 @@ body {
 
   &__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 5rem;
     align-items: start;
 
@@ -567,7 +570,8 @@ body {
     text-transform: uppercase;
     padding: 6px 14px;
     border-radius: 100px;
-    background: $color-pop-light;
+    background: #fff;
+    border: 1px solid $color-highlight;
   }
 
   &__avatar-wrap {
@@ -576,7 +580,7 @@ body {
 
   &__avatar {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 4;
     background: #fff;
     border-radius: 16px;
     display: flex;
@@ -585,30 +589,37 @@ body {
     margin-bottom: 2rem;
     overflow: hidden;
     position: relative;
+
+    img {
+      max-width:400px;
+      opacity: .8;
+    }
   }
 
   &__avatar-inner {
     position: absolute;
     inset: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-end;
     flex-direction: column;
     gap: 0.5rem;
+    padding: 2rem;
   }
 
   &__avatar-initials {
     font-family: $font-serif;
     font-size: 5rem;
-    color: $color-placeholder;
+    color: $color-pop;
     line-height: 1;
+    font-weight: bolder;
   }
 
   &__avatar-name {
-    font-size: 0.75rem;
+    font-size: 1.5rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: $color-placeholder;
+    color: $color-pop;
   }
 
   &__skills {
@@ -670,10 +681,16 @@ body {
   }
 }
 
+.process-card-container {
+  background:#fff;
+  border-radius:12px;
+  padding:1rem 2rem;
+}
+
 .process-card {
-  border-top: 1px solid $color-border-lt;
   padding: 2rem 0;
   transition: border-color 0.3s;
+  background:#fff;
 
   &:hover {
     border-color: $color-highlight;
@@ -681,7 +698,7 @@ body {
 
   &__inner {
     display: grid;
-    grid-template-columns: 80px 1fr 1fr;
+    grid-template-columns: 80px 1fr 3fr;
     gap: 2rem;
     align-items: start;
 
@@ -701,6 +718,7 @@ body {
   &__title {
     font-family: $font-serif;
     font-size: 1.5rem;
+    color: $color-pop;
   }
 
   &__body {
@@ -725,7 +743,7 @@ body {
   }
 
   &__heading--muted {
-    color: $color-ink-faint;
+    color: $color-highlight;
     font-style: italic;
     margin-bottom: 3rem;
   }
@@ -1083,6 +1101,7 @@ a.project-card {
     justify-content: center;
     flex-shrink: 0;
     transition: transform 0.3s ease;
+    background: $color-highlight;
 
     .cs-next:hover & {
       transform: translate(4px, -4px);

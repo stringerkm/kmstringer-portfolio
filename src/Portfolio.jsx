@@ -156,7 +156,7 @@ export default function Portfolio() {
                 </p>
               </div>
               <div className={`about__tools ${fu(aboutInView, 2)}`}>
-                {["Figma", "Drupal", "Wordpress", "Bootstrap", "USWDS"].map(tool => (
+                {["Figma", "Drupal", "UI/UX Design", "Front-end development", "Accessibility"].map(tool => (
                   <span key={tool} className="about__tool-badge">{tool}</span>
                 ))}
               </div>
@@ -164,8 +164,9 @@ export default function Portfolio() {
 
             <div className={fu(aboutInView, 1)}>
               <div className="about__avatar-wrap">
-                
                 <div className="about__avatar">
+                  
+                <img src="/images/kate-stringer.jpg" alt="Kate Stringer" />
                   <div className="about__avatar-inner">
                    <div className="about__avatar-initials serif">KS</div>
                     <p className="about__avatar-name">Kate Stringer</p>
@@ -205,8 +206,10 @@ export default function Portfolio() {
       {/* ── WORK ── */}
       <section ref={workRef} id="work" className="work">
         <div className="container">
+          
+            <p className="section-label">Work</p>
           <div className={`work__header ${fu(workInView)}`}>
-            <h2 className="work__heading serif">Selected Work</h2>
+            <h2 className="work__heading serif">Selected Projects</h2>
             {/* <span className="work__year">2023–2024</span> */}
           </div>
 
@@ -225,9 +228,10 @@ export default function Portfolio() {
                 >
                   <div>
                     <div className="project-card__meta">
-                      <span className="project-card__category">
+                     {/* <span className="project-card__category">
                         {p.category} · {p.year}
                       </span>
+                      */}
                       <span className="project-card__role">{p.role}</span>
                     </div>
 
@@ -284,6 +288,7 @@ export default function Portfolio() {
             <h2 className="process__heading serif">How I work</h2>
           </div>
 
+          <div className="process-card-container">
           {PROCESS_STEPS.map((step, i) => (
             <div
               key={step.num}
@@ -296,6 +301,7 @@ export default function Portfolio() {
               </div>
             </div>
           ))}
+          </div>
         </div>
       </section>
 
@@ -344,7 +350,7 @@ export default function Portfolio() {
                 <div className="contact__socials">
                   {[
                     { name: 'LinkedIn', url: 'https://linkedin.com/in/kate-stringer-61441215' },
-                    { name: 'Github', url: 'https://linkedin.com'},
+                    { name: 'Github', url: 'https://github.com/stringerkm'},
                     { name: 'Resume', url: '/files/KateStringer-Resume.pdf'},
                    ].map((link, index) => (
                     <a key={index} href={link.url} className="contact__social-link" target="_blank">{link.name}</a>

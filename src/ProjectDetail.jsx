@@ -280,7 +280,6 @@ export default function ProjectDetail() {
               </h2>
               <div
                 className="cs-next__arrow"
-                style={{ background: nextProject.accent }}
               >
                 <svg width="20" height="20" viewBox="0 0 14 14" fill="none">
                   <path
